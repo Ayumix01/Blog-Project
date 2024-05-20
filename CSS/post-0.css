@@ -1,0 +1,207 @@
+
+/************************/
+/* Start Blog Container */
+/************************/
+
+.blog-container {
+	grid-template-areas: 
+        "head head"
+        "nav nav"
+        "body body"
+        "bio bio"
+        "social social"
+        "foot foot";
+    display: grid;
+	grid-template-rows: 200px 100px 1fr min-content min-content 100px;
+    grid-template-columns: 50% 50%;
+}
+
+/**********************/
+/* End Blog Container */
+/*************-*********/
+
+
+/**********************/
+/* Start Blog Content */
+/**********************/
+
+article {
+    grid-area: body;
+}
+
+.post {
+	flex-direction: column;
+    display: flex;
+    align-items: center;
+    background: #000000;
+    padding: 15px;
+	border-radius: 50px;
+    margin: 15px;
+	border: dotted;
+	border-color: #ff007f;
+	box-shadow: 10px 10px 20px #cdb4db;
+}
+
+.post-img {
+    width: 100%;
+}
+
+/**********************/
+/* End Blog Content */
+/**********************/
+
+
+/*************/
+/* Start Bio */
+/*************/
+
+#bio {
+	padding: 55px;
+	max-width: 90%;
+    grid-area: bio;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bio-description {
+    max-width: auto;
+}
+
+.bio-img-container {
+	max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#bio-img {
+    width: 100%;
+	height: 100%;
+    border-radius: 100%;
+    border: 5px dotted;
+	border-color: #ff007f;
+}
+
+/***********/
+/* End Bio */
+/***********/
+
+
+/*****************/
+/* Start Socials */
+/*****************/
+
+#social {
+    grid-area: social;
+	align-items: center;
+	justify-content: center;
+    display: flex;
+}
+
+.icon {
+    height: 30%;
+    width: auto;
+	margin-top: 150px;
+	margin-left: -30px;
+	padding-left: 50px;
+	justify-content: right;
+	color: #ff007f;
+}
+
+.social-link {
+    padding-top: 100px;
+}
+
+/***************/
+/* End Socials */
+/***************/
+
+/*****************/
+/* Start Footer  */
+/*****************/
+
+footer {
+	text-align: center;
+    grid-area: foot;
+	padding-bottom: 50px;
+}
+
+/***************/
+/* End Footer  */
+/***************/
+
+/********************/
+/* Start Responsive */
+/********************/
+
+@media(min-width: 800px) {
+    .blog-container {
+		grid-template-areas: 
+            "head head head head head head head head"
+            "nav nav body body body body body body"
+            "bio bio body body body body body body"
+            "social social body body body body body body"
+            "foot foot foot foot foot foot foot foot";
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 200px 1fr 1fr 1fr 100px;
+        
+    }
+
+    
+/****************************/
+/* Start Responsive Content */
+/****************************/
+	
+    .post {
+		padding: 20px;
+        margin: 20px;
+    }
+
+    .sidebar {
+        max-width: 70%;
+    }
+
+/**************************/
+/* End Responsive Content */
+/**************************/
+	
+
+/************************/
+/* Start Responsive Bio */
+/************************/
+	
+    #bio {
+        justify-content: flex-start;
+		margin-top: 30px;
+		z-index: -1;
+        padding-top: 50px;
+		grid-row-start: 2;
+        max-width: 60%;
+    }
+
+    #bio-icon {
+        max-width: 100%;
+    }
+	
+    .bio-img-container {
+		max-width: 100%;
+		justify-content: center;
+        display: flex;
+
+    }
+	
+/**********************/
+/* End Responsive Bio */
+/**********************/
+
+    #social {
+		width: 70%;
+        grid-row-start: 2;
+    }
+	
+/******************/
+/* End Responsive */
+/******************/
+	
+	
+}
